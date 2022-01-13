@@ -57,7 +57,17 @@ contract Ballot {
         state = State.Created;
     }
 
-    function addVoter() private {}
+    function addVoter(address _voterAddress,string memory _voterName)
+    public
+    inState(State.Created)
+    onlyOfficial
+    {
+      voter memory v;
+      v.voterName=_voterName;
+      v.voted=false;
+      voterRegister[_voterAddress]=v;
+      totalVoter++;
+    }
 
     function startVote() private {}
 
