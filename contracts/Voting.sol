@@ -2,6 +2,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Ballot {
+
     //variables
     struct vote {
         address voterAddress;
@@ -27,4 +28,24 @@ contract Ballot {
 
     enum State{Created,Voting,Ended}
     State public state;
+
+    //functions
+    constructor(){
+
+    }
+    function addVoter() private{
+
+    }
+
+    function startVote() private{
+
+    }
+    function doVote() public {
+
+    }
+
+    function endVote() private {
+
+    }
+
 }
