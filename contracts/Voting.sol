@@ -29,6 +29,23 @@ contract Ballot {
     enum State{Created,Voting,Ended}
     State public state;
 
+    //modifiers
+
+    modifier condition(bool _condition){
+      require(_condition);
+      _;
+    }
+
+    modifier onlyOfficial(){
+      require(msg.sender== ballotOfficialAddress);
+      _;
+    }
+
+    modifier inState(State _state){
+      require(state==_state);
+      _;
+    }
+
     //functions
     constructor(){
 
